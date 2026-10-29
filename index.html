@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kehinde Obajimi | Learning to Build with AI</title>
+  <meta name="description" content="Personal landing page of Kehinde Obajimi, learning to build web apps with AI." />
+
+  <style>
+    /* ---------- 1. Colors and basic settings ---------- */
+    :root {
+      --bg: #0d0f14;          /* page background */
+      --surface: #161a22;     /* cards */
+      --border: #252b36;      /* thin lines */
+      --text: #e8eaf0;        /* main text */
+      --muted: #9aa3b2;       /* softer text */
+      --accent: #7c5cff;      /* the ONE accent color */
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.7;
+    }
+
+    /* ---------- 2. Layout helpers ---------- */
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    section { padding: 4.5rem 0; }
+
+    h2 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+
+    h2::after {
+      content: "";
+      display: block;
+      width: 40px;
+      height: 3px;
+      margin-top: 0.5rem;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    p { color: var(--muted); margin-bottom: 1rem; }
+
+    /* ---------- 3. Hero ---------- */
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      background: radial-gradient(circle at 20% 10%, rgba(124, 92, 255, 0.18), transparent 50%);
+    }
+
+    .hero .hello {
+      color: var(--accent);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 8vw, 4rem);
+      line-height: 1.1;
+      margin: 0.5rem 0 1rem;
+    }
+
+    .hero .tagline {
+      font-size: clamp(1.05rem, 3vw, 1.3rem);
+      max-width: 34rem;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.8rem 1.6rem;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 999px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(124, 92, 255, 0.35);
+    }
+
+    /* ---------- 4. Cards (What I'm building) ---------- */
+    .cards {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    @media (min-width: 640px) {
+      .cards { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.4rem;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .card:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    .card h3 { margin-bottom: 0.4rem; font-size: 1.1rem; }
+    .card p  { margin: 0; font-size: 0.95rem; }
+
+    /* ---------- 5. Contact ---------- */
+    .contact a.email {
+      color: var(--accent);
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.2s ease;
+    }
+
+    .contact a.email:hover { border-color: var(--accent); }
+
+    .contact .email-line { margin-top: 1.5rem; }
+
+    .button.whatsapp { margin-top: 0; }
+
+    /* ---------- 6. Footer ---------- */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.5rem 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container">
+      <p class="hello">Hello, I'm</p>
+      <h1>Kehinde Obajimi</h1>
+      <p class="tagline">Learning to build web apps with AI, one small project at a time.</p>
+      <a class="button" href="#contact">Get in touch</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ABOUT ME -->
+    <section id="about">
+      <div class="container">
+        <h2>About me</h2>
+        <p>
+          I'm a curious beginner who is just getting started with web development.
+          I'm using AI as a learning partner to understand how websites and apps
+          are made, from the first line of code to a finished page.
+        </p>
+        <p>
+          I believe the best way to learn is by building real things, making
+          mistakes, and improving a little every day.
+        </p>
+      </div>
+    </section>
+
+    <!-- WHAT I'M BUILDING -->
+    <section id="building">
+      <div class="container">
+        <h2>What I'm building</h2>
+        <p>A few things on my learning journey right now:</p>
+
+        <div class="cards">
+          <div class="card">
+            <h3>This landing page</h3>
+            <p>My very first website, built in a single HTML file.</p>
+          </div>
+          <div class="card">
+            <h3>A simple to-do app</h3>
+            <p>Practicing buttons, lists, and saving data in the browser.</p>
+          </div>
+          <div class="card">
+            <h3>A personal portfolio</h3>
+            <p>A place to show the projects I finish as I learn.</p>
+          </div>
+          <div class="card">
+            <h3>My next big idea</h3>
+            <p>Still taking shape. I'll share it once it's ready.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>Want to say hi, share advice, or collaborate? I'd love to hear from you.</p>
+        <a class="button whatsapp"
+           href="https://wa.me/2348033261263?text=Hello%20Kehinde%2C%20I%20visited%20your%20website%20and%20I%27d%20like%20to%20make%20an%20inquiry."
+           target="_blank" rel="noopener">Chat on WhatsApp</a>
+        <p class="email-line">Or email me at
+          <a class="email" href="mailto:kenny@multiconwebsolutions.com.ng">kenny@multiconwebsolutions.com.ng</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      &copy; 2026 Kehinde Obajimi. Built with AI and curiosity.
+    </div>
+  </footer>
+
+</body>
+</html>
